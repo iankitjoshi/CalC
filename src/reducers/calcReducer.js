@@ -3,6 +3,8 @@ import "react-toastify/dist/ReactToastify.css";
 import React from 'react'
 // import {Toast} from 'react-bootstrap'
 import Toast from 'react-bootstrap/Toast'
+import Swal from 'sweetalert2'
+
 
 
 
@@ -18,6 +20,10 @@ const calcReducers = (state = "" , action) => {
             if(parseInt(state && state.length && state[state.length-1])){
                 return eval(state)
             } else {
+                Swal.fire({
+                    icon: 'error',
+                    text: 'Invalid Input',
+                  })
                 // alert('Invalid Input')
                 // toast.success('No', {
                 //     position: toast.POSITION.TOP_CENTER
