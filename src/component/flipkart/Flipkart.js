@@ -6,7 +6,7 @@ import FlipkartNav from './flipkart-Nav'
 
 function Flipkart(){
     return(
-        <div  >
+        <div style={{backgroundColor:"#f8f9fa"}} >
            <FlipkartNav />
             <Electric />
             <Sliders />

@@ -4,7 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Home from './component/Home';
 import CalC from './component/CalC';
-import Flipkart from './component/Flipkart'
+import Flipkart from './component/flipkart/Flipkart'
+import Login from './component/login/login';
 
 
 
@@ -15,11 +16,13 @@ function App() {
 
         <Link to="/">Home |</Link>
         <Link to="/calc">Calculator |</Link>
-        <Link to="/flipkart">Flipkart</Link>
+        <Link to="/flipkart">Flipkart |</Link>
+        <Link to="/login">Login</Link>
 
         <Route path="/" component={Home} exact={true} />
         <Route path="/calc" component={CalC} />
         <Route path="/flipkart" component={Flipkart} />
+        <Route path="/login" component={Login} />
       
       </BrowserRouter>
     </div> 

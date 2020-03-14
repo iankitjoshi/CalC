@@ -1,6 +1,6 @@
 import React from 'react'
 import {Row, Col} from "react-bootstrap";
-import "../assets/Custom.scss"
+import "../../assets/Custom.scss"
 
 class Electric extends React.Component{
     constructor(){

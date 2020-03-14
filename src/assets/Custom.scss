@@ -1,18 +1,63 @@
+// CalC
+.button-calc {
+    border-radius: 0px;
+    width: 50px;
+}
+
+.button-calc-big {
+    border-radius: 0px;
+    width: 55px;
+}
+
+
+// Flipkart
 // Flipkart-Nav.js
 
 .cart-button {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial;
     font-size: 20px;
+    margin-left: 13px;
 }
-
+ 
 .login-button {
     background-color: white;
     color: blue;
     border-radius: 0px;
+    padding: 5px 30px;
+    cursor: pointer;
+   
 }
 
+.main-nav {
+    margin: auto;
+}
 
+.main-div-nav {
+    display: flex;
+    background-color: #007bff;
+}
 
+.search-form {
+    width: 450px;
+    height: 35px;
+    box-sizing: border-box;
+}
+.search-button {
+    margin: -8px;
+    height: 37.5px;
+    width: 33px;
+    color: blue;
+    background-color: white;
+    border: none;
+}
+
+.more-nav {
+    border-radius: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin-left: 18px;
+    color: white;
+}
 // Flipkar-ele-tv.js
 
 .button-ele-tv {
@@ -29,3 +74,58 @@
 .header-div-ele-tv {
     background-color: #f8f9fa;
 }
+
+// Flipkartislide
+
+.image-slide {
+    width: 1370px;
+    height: 300px;
+    border: solid gainsboro 6px;
+}
+
+.slide-div {
+    margin-right: px;
+    margin-left: 6px;
+}
+
+// Flipkart-Deals-Day
+
+.button-deals-day {
+    font-size: 16px;
+    width: 130px;
+    font-family: serif;
+}
+
+.img-deals-day {
+    width: 140px;
+    height: 150px;
+}
+
+.row-tag-deals-day {
+    margin-left: 1px;
+    // margin-right: 290px;
+    background-color: #f8f9fa;
+    display: inline-block;
+    border: gainsboro solid 5px;
+}
+
+.col-deals-day {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.img2-deals-day {
+    margin-right: 10px;
+    margin-top: 31px;
+    width: 230px;
+    height: 350px;
+    border-left: 6px solid gainsboro;
+}
+
+.main-div-deals-day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+}
+// style={{"display": "flex", "justifyContent": "center", "alignItems": "center"}}
