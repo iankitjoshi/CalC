@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-function Home(){
-    return(
-        <div>
-            HomePage
-        </div>
-    )
+function Home() {
+  return (
+    <div style={{ textAlign: "center" }}>
+      <h1>HomePage</h1>
+    </div>
+  );
 }
 
-export default Home
+export default Home;

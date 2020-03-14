@@ -8,6 +8,7 @@
 .login-div {
     margin: 5rem auto;
     box-shadow: 1px 2px 5px -4px rgba(0, 0, 0, 0.10);
+
     span {
         display: flex;
         align-items: center;
@@ -16,12 +17,12 @@
 
 .logn-sec-div {
     border: #83cea5 solid 30px;
-    background-color: #f5de11;
+    background-color: #c5b30f;
 
 }
 
 .rotate-div {
-    background-color: rgb(15, 110, 47);
+    background-color: #125c2a;
     transform: rotate(102deg);
     height: 92%;
     width: 155%;
@@ -31,8 +32,6 @@
 
 .log-part {
     box-shadow: 1px 2px 15px -4px rgba(0, 0, 0, 0.75);
-    ;
-
     .login {
         background-color: rgb(253, 253, 253);
         border: 1px solid #ccc;
@@ -41,8 +40,6 @@
 
         form {
             .form-group {
-                padding: 4px 0px;
-
                 button {
                     margin-bottom: 5px;
                 }
@@ -75,8 +72,18 @@
     }
 }
 
-.rotate-row{
+.rotate-row {
     overflow: hidden;
 }
 
+.error{
+    input {
+        border-color: red;
+        box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.26);
+    }
+}
 
+.errors {
+    color:red;
+    font-size: 80%;
+}
