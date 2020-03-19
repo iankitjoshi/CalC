@@ -1,0 +1,94 @@
+.weather-page {
+    background-image: url(../img/weather.jpeg);
+    height: 600px;
+    text-align: center;
+}
+
+.weather-city {
+    color: white;
+    margin-top: 30px;
+    font-size: 45px;
+    font-family: serif;
+}
+
+.weather-Country {
+    color: white;
+    text-align: center;
+
+}
+
+.weather-Temp {
+    color: white;
+    font-size: 35px;
+    font-family: serif;
+    margin-top: 16px;
+}
+
+.weather-temp-min {
+    color: white;
+    font-family: serif;
+    font-size: 24px;
+    display: flex;
+    margin-top: 12px;
+    justify-content: center ;
+
+    .span-header{
+        margin-right: 35px;
+    }
+    
+}
+
+.weather-temp-max {
+    color: white;
+}
+
+.weather-description {
+    color: white;
+    font-family: serif;
+    font-size: 27px;
+}
+
+.weather-button {
+    border-radius: 0px;
+    margin-left: 10px;
+    height: 37px;
+    margin-top: 11px;
+}
+
+.weather-form {
+    margin: auto;
+}
+
+.weather-form-city{
+    margin-top: 12px;
+    height: 38px;
+    border-color: white;
+    color: white;
+}
+
+.weather-form-country{
+    margin-left: 10px;
+    height: 38px;
+
+}
+
+.weather.icon {
+    color: white;
+    font-size: 50px;
+}
+
+.wi-day-sunny,.wi-thunderstorm,.wi-sleet,.wi-storm-showers,.wi-snow,.wi-fog,.wi-day-fog{
+    color: white;
+    font-size: 50px;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+.wColor .MuiFormLabel-root,.MuiInputBase-input{
+    color: white !important;
+}
+.MuiInput-underline:before{
+    border-bottom: 1px solid white !important; 
+}
+.MuiInput-underline:after{
+        border-bottom: 2px solid white !important;
+    }

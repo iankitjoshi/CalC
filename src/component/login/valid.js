@@ -6,8 +6,6 @@ function ValidationRegister(data) {
 
 
 
-    console.log("Error", data)
-
     if(Validator.empty(data.email)) {
         error.email = "Email id is Required !!"
     }

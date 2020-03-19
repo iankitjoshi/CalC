@@ -5,7 +5,7 @@ import "../../assets/login.scss";
 
 
 const InputField = props => {
-  let { error, required = true, label = "", type , id, placeholder} = props;
+  let { error, required = true, label , type , id, placeholder,onChange,value,name} = props;
 
   return (
     <FormGroup
@@ -31,6 +31,9 @@ const InputField = props => {
             type={type}
             placeholder={placeholder}
             required={required}
+            onChange={onChange}
+            value={value}
+            name={name}
         ></FormControl>
 
       {error && <span className="errors">{error}</span>}

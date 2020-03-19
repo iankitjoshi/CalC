@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Link, Route } from "react-router-dom";
+import { BrowserRouter, Link, Route , Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Home from "./component/Home";
@@ -7,6 +7,9 @@ import CalC from "./component/CalC";
 import Flipkart from "./component/flipkart/Flipkart";
 import Login from "./component/login/login";
 import Register from './component/login/register'
+import Weather from "./component/weather/weather";
+import Video from "./component/videoPlayer/video";
+import Apps from "./component/youtube/containers/App";
 
 function App(props) {
   console.log("props", props);
@@ -23,7 +26,7 @@ function App(props) {
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
-                    <a class="nav-link" href="/">
+                    <a class="nav-link" href="/home">
                       Home <span class="sr-only">(current)</span>
                     </a>
                   </li>
@@ -37,6 +40,19 @@ function App(props) {
                   <li class="nav-item active">
                     <a class="nav-link" href="/flipkart">
                       Flipkart <span class="sr-only">(current)</span>
+                    </a>
+                  </li>
+
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/weather">
+                      Weather <span class="sr-only">(current)</span>
+                    </a>
+                  </li>
+
+
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/video">
+                      Video <span class="sr-only">(current)</span>
                     </a>
                   </li>
 
@@ -57,7 +73,7 @@ function App(props) {
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
-                    <a class="nav-link" href="/login">
+                    <a class="nav-link" href="/">
                       Login <span class="sr-only">(current)</span>
                     </a>
                   </li>
@@ -68,7 +84,7 @@ function App(props) {
         </nav>
         
             
-        {
+        {/* {
           localStorage.getItem("token") ? (
             <div>
 
@@ -78,12 +94,16 @@ function App(props) {
               
             </div>
           )
-        }
-        <Route path="/" component={Home} exact={true} />
+        } */}
+        <Switch>
+        <Route path="/home" component={Home} exact={true} />
         <Route path="/calc" component={CalC} />
         <Route path="/flipkart" component={Flipkart} />
-        <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
+        <Route path="/weather" component={Weather} />
+        <Route path="/video" component={Apps} />
+        <Route path="/" component={Login} />
+        </Switch>
         
         
        

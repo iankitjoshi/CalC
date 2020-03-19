@@ -24,10 +24,23 @@ class Login extends React.Component {
     };
 
     this.setState({ formData });
-    console.log("formData", formData);
+    // console.log(window.localStorage.token,'token',window.localStorage , '<<Storage>>')
+    // console.log(JSON.parse(window.localStorage.token).find(items => items.email == formData.email),'parse')
+    let a = JSON.parse(window.localStorage.token).find(items => items.email == formData.email)
+    let b = JSON.parse(window.localStorage.token).find(items => items.password == formData.password)
+    console.log(a,'a')
+    console.log(b,'b')
 
-    if (window.localStorage.token == JSON.stringify(formData)) {
-      window.location.href = "/";
+    if (a) {
+        if(b){
+        window.location.href = "/home";
+      }else{
+        Swal.fire({
+          icon: "error",
+          title: "Error...",
+          text: "Please Enter Valid Email OR Password"
+        });
+      }
     } else {
       Swal.fire({
         icon: "error",
@@ -45,7 +58,6 @@ class Login extends React.Component {
   handleChange = e => {
     const { name, value } = e.target;
     const { error } = this.state;
-
     let reg = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 
     if (name == "email" && reg.test(value)) {

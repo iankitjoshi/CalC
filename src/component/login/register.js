@@ -8,17 +8,17 @@ import InputField from "./inputField";
 
 
 class Register extends React.Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
-      name: "",
-      email:"",
+      email: "",
+      password:"",
       error:{}
     };
   }
 
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
       email: this.state.email,
@@ -28,8 +28,29 @@ class Register extends React.Component {
     this.setState({ formData });
     console.log("formData", formData);
 
-    localStorage.setItem("token", JSON.stringify(formData))
-    Swal.fire({
+    let array = []
+    let arr = JSON.parse(localStorage.getItem("token")) 
+    console.log(arr,">>arr");
+    
+    if(arr){                                                                                                                                                                          
+      array = [...arr]
+    }else{
+      array=[]
+    }
+    
+     var a = arr && arr.find(item => item.email == formData.email) || []
+
+    if(a.length){
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'This Email Already Registered',
+        text: 'Please Signup with another Email'
+      }) 
+    } else {
+      array.push(formData)
+      localStorage.setItem("token",JSON.stringify(array))
+      Swal.fire({
         position: 'center',
         icon: 'success',
         title: 'SignUp Sucessfully',
@@ -37,8 +58,13 @@ class Register extends React.Component {
         timer: 1500
       })
       setTimeout(() => {  
-      window.location.href = "/login"  
+        this.props.history.push('/')
       }, 1700);
+    }
+
+  //  array.push(formData)
+  //  localStorage.setItem("token",JSON.stringify(array))
+
 
     this.setState({
       email: "",
@@ -47,15 +73,17 @@ class Register extends React.Component {
   };
 
 
-  handleChange = e => {
+  handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(value,'value')
     const { error } = this.state;
+    console.log(error,'error')
 
-    let reg = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-
-    if (name == "email" && reg.test(value)) {
+    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    
+    if (name === "email" && reg.test(value)) {
       return;
-    }
+    }else
     this.setState({ [name]: value, error: { ...error, [name]: "" } });
     console.log("onChange", e.target.value);
   };
@@ -70,6 +98,12 @@ class Register extends React.Component {
   login = () => {
     let isValid = this.isValid();
     const { email, password } = this.state;
+    console.log(isValid,'isValid')
+    console.log(email, password ,'email')
+
+    if(isValid){
+
+    }
   };
 
 
@@ -134,7 +168,7 @@ class Register extends React.Component {
 
                 <div className="create-account">
                 <p>Already have Account ?</p> 
-                <Link to="/login" style={{color:"white"}}>  <p>Sign in..!!</p></Link>
+                <Link to="/" style={{color:"white"}}>  <p>Sign in..!!</p></Link>
                 </div>
               </Col>
             </Col>
